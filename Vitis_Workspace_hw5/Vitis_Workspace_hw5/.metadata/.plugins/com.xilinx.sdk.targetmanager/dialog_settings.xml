@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hw_5_app_system-bitFile" value="${project_loc:hw_5_app}/_ide/bitstream/temp_xsa.bit"/>
+	<item key="hw_5_app_system-bmmFile" value="${project_loc:hw_5_app}/_ide/bitstream/temp_xsa.mmi"/>
+	<item key="hw_5_app_system-target" value="Local"/>
+	<item key="hw_5_app_system-device" value="Auto Detect"/>
+	<item key="hw_5_app_system-partial_bit" value="false"/>
+	<item key="hw_5_app_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="hw_5_app_system"/>
+	<item key="hw_5_app_system-microblaze_I-initElf" value="C:\Users\andrew_clinkenbeard1\Box\SOC\Vitis_Workspace_hw5\hw_5_app\Debug\hw_5_app.elf"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Nexys4DDR 210292A4BA3FA&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Nexys4DDR-210292A4BA3FA-13631093-0&quot;}}]}"/>
+</section>

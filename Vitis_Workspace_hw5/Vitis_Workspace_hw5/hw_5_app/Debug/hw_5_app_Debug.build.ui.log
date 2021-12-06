@@ -1,0 +1,21 @@
+2021-12-04T23:03:07.363046400255-23:03:07 **** Incremental Build of configuration Debug for project hw_5_app ****
+000-make all 
+000-'Building file: ../src/main_sampler_test.cpp'
+000-'Invoking: MicroBlaze g++ compiler'
+000-mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main_sampler_test.o" -IC:/Users/andrew_clinkenbeard1/Box/SOC/Vitis_Workspace_hw5/hw_5/export/hw_5/sw/hw_5/standalone_domain/bspinclude/include -mno-xl-reorder -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main_sampler_test.d" -MT"src/main_sampler_test.o" -o "src/main_sampler_test.o" "../src/main_sampler_test.cpp"
+000-'Finished building: ../src/main_sampler_test.cpp'
+000-' '
+000-'Building target: hw_5_app.elf'
+000-'Invoking: MicroBlaze g++ linker'
+000-mb-g++ -Wl,-T -Wl,../src/lscript.ld -LC:/Users/andrew_clinkenbeard1/Box/SOC/Vitis_Workspace_hw5/hw_5/export/hw_5/sw/hw_5/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hw_5_app.elf"  ./src/adsr_core.o ./src/chu_init.o ./src/ddfs_core.o ./src/gpio_cores.o ./src/i2c_core.o ./src/main_sampler_test.o ./src/ps2_core.o ./src/spi_core.o ./src/sseg_core.o ./src/timer_core.o ./src/uart_core.o ./src/vga_core.o ./src/xadc_core.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+000-'Finished building target: hw_5_app.elf'
+000-' '
+000-'Invoking: MicroBlaze Print Size'
+000-mb-size hw_5_app.elf  |tee "hw_5_app.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000-  22716	    284	   3160	  26160	   6630	hw_5_app.elf
+000-'Finished building: hw_5_app.elf.size'
+000-' '
+00255-
+23:03:10 Build Finished (took 2s.639ms)
+
