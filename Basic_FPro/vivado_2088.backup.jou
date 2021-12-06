@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Nov  9 13:50:22 2021
+# Process ID: 2088
+# Current directory: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18012 C:\Users\andrew_clinkenbeard1\Box\SOC\Basic_FPro2\Basic_FPro2.xpr
+# Log file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/vivado.log
+# Journal file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.xpr
+update_compile_order -fileset sources_1
+import_files -norecurse {C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/chu_debounce_core.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/led_mux/led_mux8.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/debounce_counter.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/debounce_fsm.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/led_mux/chu_led_mux_core.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

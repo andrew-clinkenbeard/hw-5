@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# updatemem v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# 
+# Start of session at: Sat Nov 13 14:15:18 2021
+# Process ID: 8600
+# Current directory: c:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2
+# Command line: updatemem.exe -mode batch -source C:/XilinxVitis/Vitis/2021.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/hw4_xsa.mmi -data C:\Users\andrew_clinkenbeard1\workspace3\hw4_app\Debug\hw4_app.elf -proc cpu_unit/inst/microblaze_I -bit C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/hw4_xsa.bit -out C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/download.bit -force
+# Log file: c:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/updatemem.log
+# Journal file: c:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2\updatemem.jou
+#-----------------------------------------------------------
+source C:/XilinxVitis/Vitis/2021.1/scripts/updatemem/main.tcl -notrace
+Command: update_mem -meminfo C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/hw4_xsa.mmi -data {C:\Users\andrew_clinkenbeard1\workspace3\hw4_app\Debug\hw4_app.elf} -proc cpu_unit/inst/microblaze_I -bit C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/hw4_xsa.bit -out C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/download.bit -force
+Loading bitfile C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/hw4_xsa.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Bitstream compression saved 22170240 bits.
+Writing bitstream C:/Users/andrew_clinkenbeard1/workspace3/hw4_app/_ide/bitstream/download.bit...
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+update_mem completed successfully
+update_mem: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1246.004 ; gain = 726.023
+INFO: [Common 17-206] Exiting updatemem at Sat Nov 13 14:15:34 2021...

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Nov  9 13:50:22 2021
+# Process ID: 2088
+# Current directory: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18012 C:\Users\andrew_clinkenbeard1\Box\SOC\Basic_FPro2\Basic_FPro2.xpr
+# Log file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/vivado.log
+# Journal file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/XilinxVitis/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 1310.082 ; gain = 0.000
+update_compile_order -fileset sources_1
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+import_files -norecurse {C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/chu_debounce_core.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/led_mux/led_mux8.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/debounce_counter.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/debounce/debounce_fsm.sv C:/Users/andrew_clinkenbeard1/Box/SOC/fpga_mcs_sv_src/fpga_mcs_sv_src/hdl/mmio/led_mux/chu_led_mux_core.sv}
+import_files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1310.082 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  9 15:14:42 2021...

@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Nov 11 13:58:13 2021
+# Process ID: 2300
+# Current directory: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17256 C:\Users\andrew_clinkenbeard1\Box\SOC\Basic_FPro2\Basic_FPro2.xpr
+# Log file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/vivado.log
+# Journal file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/XilinxVitis/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 1309.480 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Nov 11 14:02:48 2021] Launched synth_1...
+Run output will be captured here: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.runs/synth_1/runme.log
+[Thu Nov 11 14:02:48 2021] Launched impl_1...
+Run output will be captured here: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.161 . Memory (MB): peak = 1502.926 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 335 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.351 . Memory (MB): peak = 2229.250 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.352 . Memory (MB): peak = 2229.250 ; gain = 0.000
+Generating merged BMM file for the design top 'mcs_top_vanilla'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.gen/sources_1/ip/cpu_1/bd_0/ip/ip_0/data/mb_bootloop_le.elf 
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2229.250 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 167 instances were transformed.
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 79 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 64 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 24 instances
+
+open_run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 2355.305 ; gain = 1045.824
+WARNING: [Vivado 12-818] No files matched ''
+ERROR: [Common 17-55] 'get_property' expects at least one object.
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+write_hw_platform -fixed -include_bit -force -file C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Slot_7&8_xsa.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Slot_7&8_xsa.xsa ...
+INFO: [Hsi 55-2053] elapsed time for repository (C:/XilinxVitis/Vivado/2021.1/data/embeddedsw) loading 1 seconds
+WARNING: [Project 1-645] Board images not set in Hardware Platform.
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Slot_7&8_xsa.xsa
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 11 15:16:46 2021...

@@ -1,0 +1,193 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}	% Narrower margins
+\usepackage{booktabs}				% Nice formatting of tables
+\usepackage{graphicx}				% Ability to include graphics
+\usepackage{hyperref}
+
+\setlength\parindent{0pt}	% Do not indent first line of paragraphs 
+
+% ---- Code listings ----
+\usepackage{listings} 					% Nice code layout and inclusion
+\usepackage[usenames,dvipsnames]{xcolor}	% Colors (needs to be defined before using colors)
+
+% Define custom colors for listings
+\definecolor{listinggray}{gray}{0.98}		% Listings background color
+\definecolor{rulegray}{gray}{0.7}			% Listings rule/frame color
+
+% Style for Verilog
+\lstdefinestyle{Verilog}{
+	language=Verilog,					% Verilog
+	backgroundcolor=\color{listinggray},	% light gray background
+	rulecolor=\color{blue}, 			% blue frame lines
+	frame=tb,							% lines above & below
+	linewidth=\columnwidth, 			% set line width
+	basicstyle=\small\ttfamily,	% basic font style that is used for the code	
+	breaklines=true, 					% allow breaking across columns/pages
+	tabsize=3,							% set tab size
+	commentstyle=\color{gray},	% comments in italic 
+	stringstyle=\upshape,				% strings are printed in normal font
+	showspaces=false,					% don't underscore spaces
+}
+
+% How to use: \Verilog[listing_options]{file}
+\newcommand{\Verilog}[2][]{%
+	\lstinputlisting[style=Verilog,#1]{#2}
+}
+
+\lstset { %
+	language=C++,
+	backgroundcolor=\color{black!5}, % set backgroundcolor
+	basicstyle=\footnotesize,% basic font setting
+}
+
+
+
+\title{Blinking LED Core}
+\author{Andrew Clinkenbeard}
+\date{\today}
+
+\begin{document}
+\maketitle
+\href {https://www.youtube.com/watch?v=IYFFpxjsxYw} {Video}\\
+\href {https://github.com/andrew-clinkenbeard/Blinking-Led-Core} {GitHub}
+\section{Introduction}
+
+In this assignment, core for the FPro system was created that blinks four LEDs with a period of XXXX milliseconds. Each LED blinks at a predetermined by software interval. With the core, the processor only needs to write to the registers that hold the interval time. 
+
+
+
+%\begin{figure}[h]\centering
+%	\includegraphics[width=\textwidth,trim=0cm 0cm 0cm 0cm,clip]{figure1}
+%	\caption{Desired Pattern}
+%	\label{Desired Pattern}			% label must be after caption
+%\end{figure}
+
+
+\section{Method}
+\subsection{Overview of Method}
+In order to produce a device that did this, first a counter was created that gives out a millisecond tick, then a blinker that blinks the LEDs was created, and finally a blinker top level module was created that blinked four LEDs. This describes the hardware creation. This was then put inside a wrapped which then plugged into the Chu mmio bus which interacts with the Microblaze processor. For the software, a header file was created along with a .cpp file which created the functions to write to the registers.
+
+\subsection{Counter}
+Below is the counter which was used to count the milliseconds passed since the start button was pressed.
+\Verilog[firstline=4]{./counter.sv}
+\subsection{Blinker}
+Below is the blinker which switches the LED state when the target time has passed.
+\Verilog[firstline=4]{./blinker.sv}
+\subsection{Blinker Top Level}
+Below is the top level of the blinker which inserts the counter as well as four instances of the blinker module in order to blink four LEDs. 
+\Verilog[firstline=4]{./blinker_top.sv}
+
+\subsection{Wrapper}
+Below is the wrapper which wraps the blinker's top level in order to allow an easy plug-in into the mmio bus.
+\Verilog[firstline=4]{./hw3.sv}
+
+\subsection{Software}
+Finally, the software was created. Fist, below is the header file for the blinking LED core. 
+
+\begin{lstlisting}
+#ifndef _hw3_H_INCLUDED
+#define _hw3_H_INCLUDED
+
+#include "chu_init.h"
+
+class HW3Core {
+public:
+/**
+* register map
+*
+*/
+enum {
+BLINK0_REG = 0, /**< Blink rate for LED 12 in ms */
+BLINK1_REG = 1, /**< Blink rate for LED 13 */
+BLINK2_REG = 2, /**< Blink rate for LED 14 */
+BLINK3_REG = 3 /**< Blink rate for LED 15 */
+};
+/**
+* constructor.
+*
+*/
+HW3Core(uint32_t core_base_addr);
+~HW3Core();                  // not used
+
+
+/*
+* function to write a timer to all of the timer reg
+*
+*/
+void write_reg(uint32_t time0, uint32_t time1,
+uint32_t time2, uint32_t time3);
+
+private:
+uint32_t base_addr;
+uint32_t wr_data0;
+uint32_t wr_data1;
+uint32_t wr_data2;
+uint32_t wr_data3;
+};
+
+#endif  // _HW3_H_INCLUDED
+
+\end{lstlisting}
+
+Next the drivers for the header file was created.
+\begin{lstlisting}
+#include "hw3_core.h"
+
+HW3Core::HW3Core(uint32_t core_base_addr) {
+base_addr = core_base_addr;
+wr_data0 = 0;
+wr_data1 = 0;
+wr_data2 = 0;
+wr_data3 = 0;
+}
+
+HW3Core::~HW3Core() {
+}
+
+
+void HW3Core::write_reg(uint32_t time0, uint32_t time1, 
+uint32_t time2, uint32_t time3) {
+wr_data0 = time0;
+wr_data1 = time1;
+wr_data2 = time2;
+wr_data3 = time3;
+
+io_write(base_addr, BLINK0_REG, wr_data0);
+io_write(base_addr, BLINK1_REG, wr_data1);
+io_write(base_addr, BLINK2_REG, wr_data2);
+io_write(base_addr, BLINK3_REG, wr_data3);
+}
+
+
+
+
+\end{lstlisting}
+
+Finally, the following code was added at the appropriate place in order to test the blinking LED core.
+
+\begin{lstlisting}
+// instantiate  blink rate class
+HW3Core time(get_slot_addr(BRIDGE_BASE, S4_USER));
+
+// function to call in main to set blink rate
+ void set_blink_rate(int t1, int t2, int t3, int t4) {
+time.write_reg(t1, t2, t3, t4);
+}
+
+// function called in main to set blink rate
+set_blink_rate(10000, 5000, 2000, 1000);
+\end{lstlisting}
+\section{Testing}
+In order to test, several different values were inserted into the registers to test that they would all blink at different times.
+
+
+\section{Results}
+The LEDs blinked at the appropriate rate.
+
+\section{Conclusion}
+In conclusion, the blinking LED core was able to be created and working. The software allows for the desired period of blinking to quickly be inserted with out having to change the hardware. The video of the working device can be seen at this \href{https://www.youtube.com/watch?v=IYFFpxjsxYw}{link}. 
+The code for the gitHub can be found at this \href {https://github.com/andrew-clinkenbeard/Blinking-Led-Core} {link}.
+
+
+\end{document}

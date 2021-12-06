@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Nov  1 19:11:59 2021
+# Process ID: 19132
+# Current directory: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1236 C:\Users\andrew_clinkenbeard1\Box\SOC\Basic_FPro2\Basic_FPro2.xpr
+# Log file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/vivado.log
+# Journal file: C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/Basic_FPro2.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/hw3_pt4_xsa.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/hw3_pt5_xsa.xsa
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/andrew_clinkenbeard1/Box/SOC/Basic_FPro2/hw3_pt6_xsa.xsa
